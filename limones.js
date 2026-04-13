@@ -20,7 +20,6 @@ function iniciar(){
     dibujarLimon();
     aparecerLimon();
 }
-
 function dibujarSuelo(){
     ctx.fillStyle= "#0722ed";
     ctx.fillRect(0,canvas.height-ALTURA_SUELO,canvas.width,ALTURA_SUELO);
@@ -31,13 +30,11 @@ function dibujarPersonaje(){
 } 
 function moverIzquierda(){
     personajeX=personajeX-10;
-    actualizarPantalla();
-    
+    actualizarPantalla();  
 }
 function moverDerecha(){
     personajeX=personajeX+10;
-    actualizarPantalla();
-    
+    actualizarPantalla();   
 }
 function actualizarPantalla(){
     limpiarCanva();
@@ -72,9 +69,9 @@ function detectarPiso(){
     if(limonY+ALTO_LIMON==canvas.height-ALTURA_SUELO){
         aparecerLimon();
         vidas=vidas-1
-        mostrarEnSpan("txtVidas",vidas) }
+        mostrarEnSpan("txtVidas",vidas) 
+    }
 }
-
 function aparecerLimon(){
     limonX=generarAleatorio(0,canvas.width-ANCHO_LIMON);
     limonY=0;
