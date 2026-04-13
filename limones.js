@@ -15,6 +15,7 @@ let puntaje=0;
 let vidas=3;
 
 function iniciar(){
+    setInterval(bajarLimon,500);
     dibujarSuelo();
     dibujarPersonaje();
     dibujarLimon();
@@ -70,6 +71,9 @@ function detectarPiso(){
         aparecerLimon();
         vidas=vidas-1
         mostrarEnSpan("txtVidas",vidas) 
+        if(vidas==0){
+            alert("GAME OVER");
+        }
     }
 }
 function aparecerLimon(){
