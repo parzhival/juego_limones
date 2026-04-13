@@ -13,9 +13,10 @@ let limonX=canvas.width/2;
 let limonY=0;
 let puntaje=0;
 let vidas=3;
+let caida=200
 
 function iniciar(){
-    setInterval(bajarLimon,500);
+    setInterval(bajarLimon,caida);
     dibujarSuelo();
     dibujarPersonaje();
     dibujarLimon();
@@ -64,6 +65,15 @@ function detectarAtrapado(){
         aparecerLimon();
         puntaje=puntaje+1;
         mostrarEnSpan("txtPuntaje",puntaje);
+        if(puntaje==3){
+            caida=150;
+        }
+        if(puntaje==6){
+            caida=100;
+        }
+        if(puntaje==10){
+            alert("Ahora te ordeno que me hagas una limonada")
+        }
     }
 }
 function detectarPiso(){
