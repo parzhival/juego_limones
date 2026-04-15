@@ -13,10 +13,12 @@ let limonX=canvas.width/2;
 let limonY=0;
 let puntaje=0;
 let vidas=3;
-let caida=200
+let velocidadCaida=200;
+let intervalo;
 
 function iniciar(){
-    setInterval(bajarLimon,caida);
+    clearInterval(intervalo)
+    intervalo=setInterval(bajarLimon,velocidadCaida);
     dibujarSuelo();
     dibujarPersonaje();
     dibujarLimon();
@@ -43,6 +45,12 @@ function actualizarPantalla(){
     dibujarSuelo();
     dibujarPersonaje();
     dibujarLimon();
+    if(puntaje==10){
+        clearInterval(velocidadCaida);
+    }
+    if(vidas==0){
+        clearInterval(velocidadCaida);
+    }
 }
 function limpiarCanva(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -72,7 +80,9 @@ function detectarAtrapado(){
             caida=100;
         }
         if(puntaje==10){
-            alert("Ahora te ordeno que me hagas una limonada")
+            clearInterval(intervalo);
+            alert("Ahora te ordeno que me hagas una limonada");
+            
         }
     }
 }
@@ -82,7 +92,9 @@ function detectarPiso(){
         vidas=vidas-1
         mostrarEnSpan("txtVidas",vidas) 
         if(vidas==0){
+            clearInterval(intervalo);
             alert("GAME OVER");
+            
         }
     }
 }
@@ -90,4 +102,12 @@ function aparecerLimon(){
     limonX=generarAleatorio(0,canvas.width-ANCHO_LIMON);
     limonY=0;
     actualizarPantalla();
+}
+function reiniciar(){
+    vidas=3;
+    puntaje=0;
+    mostrarEnSpan("txtPuntaje",puntaje);
+    mostrarEnSpan("txtVidas",vidas);
+    actualizarPantalla();
+    iniciar();
 }
