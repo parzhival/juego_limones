@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -8,9 +9,10 @@
 </head>
 <body onload="iniciar();">
   <div class="contenedor">
+
     <header class="header">
-      <h1>Atrapar Limones 🍋</h1>
-      <p class="subtitulo">Si del cielo te caen limones... ¡atrápalos todos!</p>
+      <h1 class="titulo">Atrapar Limones</h1>
+      <p class="subtitulo">¡Si del cielo te caen limones... atrápalos todos!</p>
       <h2 class="autor">Autor: Joshua Vaca</h2>
     </header>
 
@@ -19,23 +21,23 @@
     </section>
 
     <section class="panel">
-      <div class="card">
+      <div class="card pokedex">
         <span class="label">Puntaje</span>
         <span id="txtPuntaje" class="valor">0</span>
       </div>
-      <div class="card">
+      <div class="card pokedex rojo">
         <span class="label">Vidas</span>
         <span id="txtVidas" class="valor">3</span>
       </div>
     </section>
 
     <section class="botones">
-      <button onclick="moverIzquierda();" class="btn">⬅ Izquierda</button>
-      <button onclick="moverDerecha();" class="btn">Derecha ➡</button>
-      <button onclick="reiniciar();" class="btn btn-reset">🔄 Reiniciar</button>
+      <button onclick="moverIzquierda();" class="btn">⬅</button>
+      <button onclick="moverDerecha();" class="btn">➡</button>
+      <button onclick="reiniciar();" class="btn btn-reset">⟳</button>
     </section>
-  </div>
 
+  </div>
   <script src="limones.js"></script>
 </body>
 </html>
